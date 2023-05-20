@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1683742128 source:e:\projects\c++\computer-graphics\computer-graphics\main.cpp
+	<tchar.h>
+	<windows.h>
+	<iostream>
+	<cmath>
+	<vector>
+
