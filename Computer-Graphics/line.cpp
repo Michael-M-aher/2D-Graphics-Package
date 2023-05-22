@@ -5,7 +5,7 @@ void Line_Direct(HDC hdc,Point p1,Point p2,COLORREF color){
     double mi = (double)dx/dy;
     if(abs(dx)>=abs(dy)){
         if(p2.x<p1.x)swap(p1,p2);
-        int x = p1.x;
+        double x = p1.x;
         double y = p1.y;
         while(x<=p2.x){
             std::cout<<"x: " << x << " " << "y: "<<Round(y)<<std::endl;
@@ -34,7 +34,7 @@ void Line_DDA(HDC hdc,Point p1,Point p2,COLORREF color){
     double mi = (double)dx/dy;
     if(abs(dx)>=abs(dy)){
         if(p2.x<p1.x)swap(p1,p2);
-        int x = p1.x;
+        double x = p1.x;
         double y = p1.y;
         while(x<=p2.x){
             std::cout<<"x: " << x << " " << "y: "<<Round(y)<<std::endl;
@@ -55,7 +55,7 @@ void Line_DDA(HDC hdc,Point p1,Point p2,COLORREF color){
     }
 }
 
-void Line_Midpoint_float(HDC hdc,Point p1,Point p2,COLORREF color){
+void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
     int dy = p2.y - p1.y;
     int dx = p2.x - p1.x;
     if(abs(dx)>=abs(dy)){
@@ -103,7 +103,7 @@ void Line_Midpoint_float(HDC hdc,Point p1,Point p2,COLORREF color){
     }
 }
 
-void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
+void Line_Midpoint_Improved(HDC hdc,Point p1,Point p2,COLORREF color){
     int dy = p2.y - p1.y;
     int dx = p2.x - p1.x;
     if(abs(dx)>=abs(dy)){
