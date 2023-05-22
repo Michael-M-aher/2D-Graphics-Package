@@ -6,18 +6,22 @@ void Line_Direct(HDC hdc,Point p1,Point p2,COLORREF color){
     if(abs(dx)>=abs(dy)){
         if(p2.x<p1.x)swap(p1,p2);
         int x = p1.x;
+        double y = p1.y;
         while(x<=p2.x){
-            double y = p1.y+(x-p1.x)*m;
+            std::cout<<"x: " << x << " " << "y: "<<Round(y)<<std::endl;
             SetPixel(hdc,x,Round(y),color);
             x++;
+            y = p1.y+(x-p1.x)*m;
         }
     }else{
         if(dy<0)swap(p1,p2);
         int y = p1.y;
+        double x = p1.x;
         while(y<=p2.y){
-            double x = p1.x+(y-p1.y)*mi;
+            std::cout<<"x: " << Round(x) << " " << "y: "<<y<<std::endl;
             SetPixel(hdc,Round(x),y,color);
             y++;
+            x = p1.x+(y-p1.y)*mi;
         }
     }
 }
@@ -33,6 +37,7 @@ void Line_DDA(HDC hdc,Point p1,Point p2,COLORREF color){
         int x = p1.x;
         double y = p1.y;
         while(x<=p2.x){
+            std::cout<<"x: " << x << " " << "y: "<<Round(y)<<std::endl;
             SetPixel(hdc,x,Round(y),color);
             x++;
             y+=m;
@@ -42,6 +47,7 @@ void Line_DDA(HDC hdc,Point p1,Point p2,COLORREF color){
         double x = p1.x;
         int y = p1.y;
         while(y<=p2.y){
+            std::cout<<"x: " << x << " " << "y: "<<Round(y)<<std::endl;
             SetPixel(hdc,Round(x),y,color);
             y++;
             x+=mi;
@@ -113,18 +119,19 @@ void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
             if(p2.y>=p1.y){
                 x++;
                 if(d>0){
-                    d+=change1;
+                    d+=change2;
                 }else{
                     y++;
-                    d+=change2;
+                    d+=change1;
                 }
             }else{
                 x++;
                 if(d>0){
                     y--;
-                    d-=change2;
-                }else{
                     d-=change1;
+                }else{
+
+                    d-=change2;
                 }
             }
         }
@@ -139,18 +146,19 @@ void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
             if(p2.x>=p1.x){
                 y++;
                 if(d>0){
+                    x++;
                     d+=change1;
                 }else{
-                    x++;
                     d+=change2;
                 }
             }else{
                 y++;
                 if(d>0){
-                    x--;
-                    d-=change2;
+                   d-=change2;
                 }else{
+                    x--;
                     d-=change1;
+
                 }
             }
         }
@@ -165,6 +173,7 @@ void Line_Parametric(HDC hdc, Point p1, Point p2, int y2,COLORREF color)
     {
         double x = round(p1.x + (t * (dx)));
         double y = round(p1.y + (t * (dy)));
+        std::cout<<"x: " << x << " " << "y: "<<Round(y)<<std::endl;
         SetPixel(hdc, x, y, color);
     }
 }
