@@ -118,15 +118,15 @@ void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
             SetPixel(hdc,x,y,color);
             if(p2.y>=p1.y){
                 x++;
-                if(d>0){
-                    d+=change2;
-                }else{
+                if(d<=0){
                     y++;
                     d+=change1;
+                }else{
+                    d+=change2;
                 }
             }else{
                 x++;
-                if(d>0){
+                if(d>=0){
                     y--;
                     d-=change1;
                 }else{
@@ -147,7 +147,7 @@ void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
             SetPixel(hdc,x,y,color);
             if(p2.x>=p1.x){
                 y++;
-                if(d>0){
+                if(d>=0){
                     x++;
                     d+=change1;
                 }else{
@@ -155,12 +155,11 @@ void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
                 }
             }else{
                 y++;
-                if(d>0){
-                   d-=change2;
-                }else{
+                if(d<=0){
                     x--;
                     d-=change1;
-
+                }else{
+                    d-=change2;
                 }
             }
         }
