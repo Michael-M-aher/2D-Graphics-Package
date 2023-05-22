@@ -175,7 +175,7 @@ void Line_Parametric(HDC hdc, Point p1, Point p2, COLORREF color)
     {
         double x = round(p1.x + (t * (dx)));
         double y = round(p1.y + (t * (dy)));
-        std::cout<<"x: " << x << " " << "y: "<<Round(y)<<std::endl;
-        SetPixel(hdc, x, y, color);
+        std::cout<<"x: " << Round(x) << " " << "y: "<<Round(y)<<std::endl;
+        SetPixel(hdc, Round(x), Round(y), color);
     }
 }
