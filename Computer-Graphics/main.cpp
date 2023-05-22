@@ -2,9 +2,11 @@
 #include <windows.h>
 #include <iostream>
 #include <cmath>
+#include <math.h>
 #include <vector>
 
 #include "helper.cpp"
+#include "line.cpp"
 
 /*  Declare Windows procedure  */
 LRESULT CALLBACK WindowProcedure (HWND, UINT, WPARAM, LPARAM);
@@ -86,7 +88,7 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
 
         case WM_RBUTTONDBLCLK:
             {
-
+                Line_Midpoint(hdc,Point(200,300),Point(300,100),color);
             break;
             }
         case WM_DESTROY:
