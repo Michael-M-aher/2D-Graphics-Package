@@ -167,7 +167,7 @@ void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
     }
 }
 
-void Line_Parametric(HDC hdc, Point p1, Point p2, int y2,COLORREF color)
+void Line_Parametric(HDC hdc, Point p1, Point p2, COLORREF color)
 {
     int dy=p2.y-p1.y;
     int dx=p2.x-p1.x;
