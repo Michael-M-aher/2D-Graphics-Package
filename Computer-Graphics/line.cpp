@@ -106,9 +106,9 @@ void Line_Midpoint_float(HDC hdc,Point p1,Point p2,COLORREF color){
 void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
     int dy = p2.y - p1.y;
     int dx = p2.x - p1.x;
-    int d = abs(dx)-2*abs(dy);
-    int change1 = 2*abs(dx)-2*abs(dy);
     if(abs(dx)>=abs(dy)){
+        int d = abs(dx)-2*abs(dy);
+        int change1 = 2*abs(dx)-2*abs(dy);
         int change2 = -(2*abs(dy));
         if(p2.x<p1.x)swap(p1,p2);
         int x = p1.x;
@@ -136,6 +136,8 @@ void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
             }
         }
     }else{
+        int d = 2*abs(dx)-abs(dy);
+        int change1 = 2*abs(dx)-2*abs(dy);
         int change2 = 2*abs(dx);
         if(dy<0)swap(p1,p2);
         int x = p1.x;
