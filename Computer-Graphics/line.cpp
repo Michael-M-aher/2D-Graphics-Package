@@ -47,7 +47,7 @@ void Line_DDA(HDC hdc,Point p1,Point p2,COLORREF color){
         double x = p1.x;
         int y = p1.y;
         while(y<=p2.y){
-            std::cout<<"x: " << x << " " << "y: "<<Round(y)<<std::endl;
+            std::cout<<"x: " << Round(x) << " " << "y: "<<y<<std::endl;
             SetPixel(hdc,Round(x),y,color);
             y++;
             x+=mi;
@@ -172,8 +172,8 @@ void Line_Parametric(HDC hdc, Point p1, Point p2, COLORREF color)
     int dx=p2.x-p1.x;
     for (double t = 0; t <= 1; t += 0.001)
     {
-        double x = round(p1.x + (t * (dx)));
-        double y = round(p1.y + (t * (dy)));
+        double x = Round(p1.x + (t * (dx)));
+        double y = Round(p1.y + (t * (dy)));
         std::cout<<"x: " << Round(x) << " " << "y: "<<Round(y)<<std::endl;
         SetPixel(hdc, Round(x), Round(y), color);
     }
