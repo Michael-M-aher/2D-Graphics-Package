@@ -26,7 +26,7 @@ void swap(Point &p1, Point &p2)
 
 int Round(double x)
 {
-    return (int)x + 0.5;
+    return (int)(x + 0.5);
 };
 
 int distance(Point p1, Point p2)
