@@ -59,54 +59,6 @@ void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
     int dy = p2.y - p1.y;
     int dx = p2.x - p1.x;
     if(abs(dx)>=abs(dy)){
-        if(p2.x<p1.x)swap(p1,p2);
-        int x = p1.x;
-        int y = p1.y;
-        while(x<=p2.x){
-            std::cout<<"x: " << x << " " << "y: "<<y<<std::endl;
-            SetPixel(hdc,x,y,color);
-            if(p2.y>=p1.y){
-                int d = dx*((2*y+1)-2*p1.y)- 2*dy*(x+1-p1.x);
-                x++;
-                if(d<=0){
-                    y++;
-                }
-            }else{
-                int d = dx*((2*y-1)-2*p1.y)- 2*dy*(x+1-p1.x);
-                x++;
-                if(d>0){
-                    y--;
-                }
-            }
-        }
-    }else{
-        if(dy<0)swap(p1,p2);
-        int x = p1.x;
-        int y = p1.y;
-        while(y<=p2.y){
-            std::cout<<"x: " << x << " " << "y: "<<y<<std::endl;
-            SetPixel(hdc,x,y,color);
-            if(p2.x>=p1.x){
-                int d = 2*dx*(y+1-p1.y)- dy*((2*x+1)-2*p1.x);
-                y++;
-                if(d<=0){
-                    x++;
-                }
-            }else{
-                int d = 2*dx*(y+1-p1.y)- dy*((2*x-1)-2*p1.x);
-                y++;
-                if(d>0){
-                    x--;
-                }
-            }
-        }
-    }
-}
-
-void Line_Midpoint_Improved(HDC hdc,Point p1,Point p2,COLORREF color){
-    int dy = p2.y - p1.y;
-    int dx = p2.x - p1.x;
-    if(abs(dx)>=abs(dy)){
         int d = abs(dx)-2*abs(dy);
         int change1 = 2*abs(dx)-2*abs(dy);
         int change2 = -(2*abs(dy));
