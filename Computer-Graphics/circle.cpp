@@ -16,7 +16,7 @@ void Circle_Cartesian(HDC hdc,Point pCenter,int r, COLORREF color){
     while(x<=y){
         Draw8Points(hdc,pCenter,x,y,color);
         x++;
-        y = Round(sqrt((r2-x*x)));
+        y = Round((double)sqrt((r2-x*x)));
     }
 }
 
