@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1684863096 source:e:\projects\c++\computer-graphics\computer-graphics\main.cpp
+	<tchar.h>
+	<windows.h>
+	<iostream>
+	<cmath>
+	<math.h>
+	<vector>
+	"helper.cpp"
+	"line.cpp"
+	"circle.cpp"
+	"ellipse.cpp"
+	"filling-circle.cpp"
+
+1684776372 e:\projects\c++\computer-graphics\computer-graphics\helper.cpp
+
+1684863393 e:\projects\c++\computer-graphics\computer-graphics\line.cpp
+
+1684846763 e:\projects\c++\computer-graphics\computer-graphics\circle.cpp
+
+1684859244 e:\projects\c++\computer-graphics\computer-graphics\ellipse.cpp
+
+1684863404 e:\projects\c++\computer-graphics\computer-graphics\filling-circle.cpp
+
