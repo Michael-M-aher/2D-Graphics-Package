@@ -99,7 +99,6 @@ void NonConvexFill(HDC hdc,mPolygon p,COLORREF color){
     std::unordered_map<int, EdgeList> table;
     InitEdgeTable(p, table);
     int y = INT_MAX;
-    int low = INT_MAX;
     for(auto i:table){
         if(i.first<y)
             y = i.first;
