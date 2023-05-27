@@ -8,7 +8,6 @@ void Line_Direct(HDC hdc,Point p1,Point p2,COLORREF color){
         double x = p1.x;
         double y = p1.y;
         while(x<=p2.x){
-            std::cout<<"x: " << x << " " << "y: "<<Round(y)<<std::endl;
             SetPixel(hdc,x,Round(y),color);
             x++;
             y = p1.y+(x-p1.x)*m;
@@ -18,7 +17,6 @@ void Line_Direct(HDC hdc,Point p1,Point p2,COLORREF color){
         int y = p1.y;
         double x = p1.x;
         while(y<=p2.y){
-            std::cout<<"x: " << Round(x) << " " << "y: "<<y<<std::endl;
             SetPixel(hdc,Round(x),y,color);
             y++;
             x = p1.x+(y-p1.y)*mi;
@@ -37,7 +35,6 @@ void Line_DDA(HDC hdc,Point p1,Point p2,COLORREF color){
         double x = p1.x;
         double y = p1.y;
         while(x<=p2.x){
-            std::cout<<"x: " << x << " " << "y: "<<Round(y)<<std::endl;
             SetPixel(hdc,x,Round(y),color);
             x++;
             y+=m;
@@ -47,7 +44,6 @@ void Line_DDA(HDC hdc,Point p1,Point p2,COLORREF color){
         double x = p1.x;
         int y = p1.y;
         while(y<=p2.y){
-            std::cout<<"x: " << Round(x) << " " << "y: "<<y<<std::endl;
             SetPixel(hdc,Round(x),y,color);
             y++;
             x+=mi;
@@ -66,7 +62,6 @@ void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
         int x = p1.x;
         int y = p1.y;
         while(x<=p2.x){
-            std::cout<<"x: " << x << " " << "y: "<<y<<std::endl;
             SetPixel(hdc,x,y,color);
             if(p2.y>=p1.y){
                 x++;
@@ -95,7 +90,6 @@ void Line_Midpoint(HDC hdc,Point p1,Point p2,COLORREF color){
         int x = p1.x;
         int y = p1.y;
         while(y<=p2.y){
-            std::cout<<"x: " << x << " " << "y: "<<y<<std::endl;
             SetPixel(hdc,x,y,color);
             if(p2.x>=p1.x){
                 y++;
@@ -126,7 +120,6 @@ void Line_Parametric(HDC hdc, Point p1, Point p2, COLORREF color)
     {
         double x = Round(p1.x + (t * (dx)));
         double y = Round(p1.y + (t * (dy)));
-        std::cout<<"x: " << Round(x) << " " << "y: "<<Round(y)<<std::endl;
         SetPixel(hdc, Round(x), Round(y), color);
     }
 }
